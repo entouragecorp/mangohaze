@@ -414,10 +414,9 @@ div[id*="next_btn_"] {
       .ans{
         font-size: 1em;
         width: 82%;
-        height: fit-content;
 
         &.correct {
-          font-size: 2.5rem;
+          font-size: 1.6rem;
           font-family: "Tiempos Heading SemiBold";
           font-weight: 700;
           color: $purple;
@@ -487,7 +486,7 @@ div[id*="next_btn_"] {
       height: auto;
       display: flex;
       justify-content: center;
-      margin-top: 4vh;
+      margin-top: 2vh;
 
       .input_wrapper{
         display: flex;
@@ -566,6 +565,7 @@ div[id*="next_btn_"] {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+      z-index: 99;
     }
   }
 }
