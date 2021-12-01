@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/mango-haze/static/css/main.b26ed1df.chunk.css",
+    "main.js": "/mango-haze/static/js/main.493233c8.chunk.js",
+    "main.js.map": "/mango-haze/static/js/main.493233c8.chunk.js.map",
+    "runtime-main.js": "/mango-haze/static/js/runtime-main.acc68356.js",
+    "runtime-main.js.map": "/mango-haze/static/js/runtime-main.acc68356.js.map",
+    "static/js/2.c81c9bc2.chunk.js": "/mango-haze/static/js/2.c81c9bc2.chunk.js",
+    "static/js/2.c81c9bc2.chunk.js.map": "/mango-haze/static/js/2.c81c9bc2.chunk.js.map",
+    "static/js/3.4c93384f.chunk.js": "/mango-haze/static/js/3.4c93384f.chunk.js",
+    "static/js/3.4c93384f.chunk.js.map": "/mango-haze/static/js/3.4c93384f.chunk.js.map",
+    "index.html": "/mango-haze/index.html",
+    "static/css/main.b26ed1df.chunk.css.map": "/mango-haze/static/css/main.b26ed1df.chunk.css.map",
+    "static/js/2.c81c9bc2.chunk.js.LICENSE.txt": "/mango-haze/static/js/2.c81c9bc2.chunk.js.LICENSE.txt",
+    "static/media/Color.f02d29c1.mp4": "/mango-haze/static/media/Color.f02d29c1.mp4",
+    "static/media/Pages.scss": "/mango-haze/static/media/purple-bg.a9df8fa2.png",
+    "static/media/color-logo-orange.svg": "/mango-haze/static/media/color-logo-orange.a2759d5e.svg",
+    "static/media/color-logo-purple.svg": "/mango-haze/static/media/color-logo-purple.84013984.svg",
+    "static/media/guitar.53634a63.svg": "/mango-haze/static/media/guitar.53634a63.svg",
+    "static/media/mango-cartridge.fc7d950f.png": "/mango-haze/static/media/mango-cartridge.fc7d950f.png",
+    "static/media/orig-roomba.e30ced5a.png": "/mango-haze/static/media/orig-roomba.e30ced5a.png",
+    "static/media/t-shirt-prize.63ed81c7.png": "/mango-haze/static/media/t-shirt-prize.63ed81c7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.acc68356.js",
+    "static/js/2.c81c9bc2.chunk.js",
+    "static/css/main.b26ed1df.chunk.css",
+    "static/js/main.493233c8.chunk.js"
+  ]
+}
