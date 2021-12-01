@@ -17,15 +17,13 @@ const Next = (props) => {
     const history = useHistory()
 
 
-    const verify_age = () => { 
-      console.log(limit)
-      console.log(props.path)
-      if(submission_alert()){ 
+    const verify_age = () => {
+      if(submission_alert()){
         submission_alert()
         console.log(window.location.href)
       }
       if(!submission_alert()){
-      if(props.verifyAge < limit){ 
+      if(props.verifyAge < limit){
         const users_metadata = {'dob':`${props.verifyAge}/${props.month}/${props.day}`, 'province': props.province}
         localStorage.setItem('users_metadata', JSON.stringify(users_metadata))
         history.push(props.link)
@@ -37,37 +35,39 @@ const Next = (props) => {
     }
     // Take two props - image and link
     const [background] = useState({
-        style: { 
+        style: {
             backgroundColor: `${props.color}`,
-            border: 'none', 
+            border: 'none',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
-            // background: `url(${props.image}) no-repeat center center`,
-            // backgroundSize: 'contain',
-           
         },
         link: ''
     })
 
 
 
-    const submission_alert = () => { 
+    const submission_alert = () => {
       if(props.path == '/'){
-        if(props.day == undefined || props.month == undefined || props.province == undefined || props.verifyAge == undefined){ 
+        if(props.day == undefined || props.month == undefined || props.province == undefined || props.verifyAge == undefined){
           gsap.to('.submission_alert', {opacity: '1', duration: .3})
           return true
         }
       }
-      if(props.path == undefined){ 
+      if(props.path == undefined){
         history.push(props.link)
       }
     }
 
   return(
     <>
-    <h4 className='submission_alert' style={{color: 'white', position: 'absolute', zIndex:'999', marginTop: '-6vh', opacity: '0'}}>You're missing a required field</h4>
-    <button onClick={verify_age} style={background.style} className={`next_btn ${props.class}`}>{props.text} <img id='next_image' src={props.image} alt='' /></button>
+    <h4 className='submission_alert' style={{color: 'white', position: 'absolute', zIndex:'999', marginTop: '-35px', opacity: '0'}}>You're missing a required field</h4>
+    <button onClick={verify_age} style={background.style} className={`next_btn ${props.class}`}>
+      {props.text}
+      { props.image &&
+        <img id='next_image' src={props.image} alt='' />
+      }
+    </button>
 
     </>
    )

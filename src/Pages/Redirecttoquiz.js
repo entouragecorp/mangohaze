@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import Points from './../Assets/orig-roomba.png'
 import { useHistory } from 'react-router'
 import Next from '../Components/NextButton/Next'
+import PurpleLogo from './../Assets/color-logo-purple.svg'
 
 /**
 * @author
@@ -18,18 +18,20 @@ const Redirecttoquiz = (props) => {
     }, [])
     return (
         <div className='points_container'>
-            <img className='points_page' src={Points} alt='points' />
-            <div className='messaging_for_points'>
-                <h2 className='msg_text'>
-                    YOU GOT {points}/5
-                    NOT QUITE ENOUGH!
-                    TRY AGAIN FOR YOUR
-                    CHANCE TO WIN!
-                </h2>
+          <div className="content-container">
+            <h2 className='score_text'>
+                You only scored {points} out of 5.
+            </h2>
+            <p className="tryagain_text">You'll have to try again <br /> for your chance to win!</p>
+            <div id='next_btn_points'>
+                <Next text='Try Again.' link='/quiz' color='#6D0A45' />
             </div>
-            <div className='next_btn_ '>
-                <Next class='short' text='TRY AGAIN' link='/quiz' color='#D9442A' />
-            </div>
+            <img className="colorLogo" src={PurpleLogo} alt="Color Cannabis Orange Logo" />
+            <p className="legal_copy">
+              All product images and labels provided for information and illustrative purposes
+              only, and do not represent the actual cannabis product, product label or it’s appearance.
+            </p>
+          </div>
         </div>
     )
 

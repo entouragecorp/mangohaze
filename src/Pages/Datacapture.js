@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router'
+import Logo from './../Assets/color-logo-orange.svg'
 
 /**
 * @author
@@ -10,13 +11,12 @@ const Datacapture = (props) => {
   let points = localStorage.getItem('points')
   const history = useHistory()
 
-  // Push the contents of the the form to localstorage. 
+  // Push the contents of the the form to localstorage.
 
   const on_submit = (e) => {
     e.preventDefault()
-    // history.push('/blood-orange')
     const user_metadata = JSON.parse(localStorage.getItem('users_metadata'))
- 
+
     // console.log(`Fullname: ${e.target.fullname.value} | Email: ${e.target.email.value} | Company: ${e.target.store.value}`)
       var users_data = {
       'fullname': `${e.target.fullname.value}`,
@@ -39,17 +39,19 @@ const Datacapture = (props) => {
       if(parseInt(status) === 200){
         history.push('/ThanksForEntry')
       }
-      
+
     })
   }
 
   return (
-    <div className='Prizing'>
+    <div className='data-capture-container'>
 
-      <div id='quiz_holder_'>
+      <div id='quiz_result_holder_'>
+        <img className="colorLogo" src={Logo} alt="Color Cannabis Logo" />
         <div id='contact_header_comment_holder'>
-          <h2>{`CONGRATULATIONS! YOU GOT ${points}/5 ANSWERS CORRECT!`}</h2>
-          <h4>Please leave us your contact info for your <strong>CHANCE TO WIN</strong> your very own Saturday Roomba!</h4>
+          <h2>Congratulations! <br /> You scored</h2>
+          <h3>{`${points} out of 5.`}</h3>
+          <p>Please leave your information <br /> below to be entered to win!</p>
         </div>
       </div>
 
@@ -58,11 +60,12 @@ const Datacapture = (props) => {
 
         <div className='input_container'>
           <div className='input_wrapper'>
-          <div className='label_bg'>
-          <label htmlFor='fullname' className='labels_' >FULLNAME</label>
+            <div className='label_bg'>
+              <label htmlFor='fullname' className='labels_' >FULLNAME</label>
+            </div>
+            <input className='inputs formInput' type='text' id='fullname' name='fullname' required></input>
           </div>
-          <input className='inputs formInput' type='text' id='fullname' name='fullname' placeholder='FULLNAME' required></input>
-          </div>
+
         </div>
 
         <div className='input_container'>
@@ -70,7 +73,7 @@ const Datacapture = (props) => {
           <div className='label_bg'>
           <label htmlFor='email' className='labels_' >EMAIL</label>
           </div>
-          <input className='inputs formInput' type='email' id='email' name='email'  placeholder='EMAIL' required></input>
+          <input className='inputs formInput' type='email' id='email' name='email' required></input>
           </div>
         </div>
 
@@ -79,14 +82,17 @@ const Datacapture = (props) => {
           <div className='label_bg'>
           <label htmlFor='store' className='labels_' >STORE</label>
           </div>
-          <input className='inputs formInput' type='text' id='store' name='store' placeholder='STORE' required></input>
+          <input className='inputs formInput' type='text' id='store' name='store' required></input>
           </div>
         </div>
 
-        <input type='submit' id='submit_btn' value='SUBMIT'></input>
-        <p className='legal_content'>By entering, I consent to receive emails and direct mails regarding newsletters, announcements, updates, promotions in accordance with the Saturday Cannabis and <a id='link_' href='https://entouragehealthcorp.com/privacy-policy'>Entourage Health Corp Privacy Policy</a>. I understand that my personal information will never be shared or distributed, and will not be used for purposes other than stated as part of the Saturday Cannabis Quiz.</p>
+        <input type='submit' id='submit_btn' value='Submit'></input>
       </form>
- 
+
+      <p className="legal_copy">
+        All product images and labels provided for information and illustrative purposes
+        only, and do not represent the actual cannabis product, product label or it’s appearance.
+      </p>
     </div>
   )
 

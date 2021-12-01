@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { useHistory } from 'react-router'
-import QuizOrangeBg from './../Assets/orange-vape-bg.png'
-import QuizGreenBg from './../Assets/green-quiz-bg.png'
+import PurpleBg from './../Assets/purple-bg.png'
+import PurpleLogo from './../Assets/color-logo-purple.svg'
+import OrangeBg from './../Assets/orange-bg.png'
+import OrangeLogo from './../Assets/color-logo-orange.svg'
 
 /**
 * @author
@@ -13,175 +15,181 @@ import QuizGreenBg from './../Assets/green-quiz-bg.png'
 // from this list we're going to randomly select an index
 // this index will be stored in memory and deleted from the other array
 // we then run an conditional statement to determine what are the answers
-// we then concatinate when the answer is correct or do nothing if it is not. 
-// we're nor going to call and random search function on the old array for another question. 
+// we then concatinate when the answer is correct or do nothing if it is not.
+// we're nor going to call and random search function on the old array for another question.
 
 const Quiz = (props) => {
     var completed = []
     var points = 0
     var counter = 0
-    var bg_counter = 0
     const question = useRef()
+    const questionNumber = useRef()
+    const orangeLogoRef = useRef()
+    const purpleLogoRef = useRef()
     const a = useRef()
     const b = useRef()
     const c = useRef()
     const d = useRef()
+    const e = useRef()
     const bg = useRef()
+    const showA = useRef()
+    const showB = useRef()
+    const showC = useRef()
+    const showD = useRef()
+    const showE = useRef()
+    const keyMap = ['a', 'b', 'c', 'd', 'e']
     const questionaire_limit = 5
-    const list_of_questions = ['1. Saturday 1G Blood Orange', '2. Saturday Blood Orange is priced perfectly for which on-the-go shopper?', "3. When speaking about the 1G Blood Orange product, I'd start with:", "4. Orange flavour can be difficult to nail, but Saturday's Blood Orange has done so beautifully because:", '5. I’d Recommend Saturday Blood Orange to a shopper in a situation where:']
+    const list_of_questions = [
+      {
+        question: 'For ultimate freshness, our Live Resin Vapes are made from:',
+        options: {
+          a: 'A. Flash frozen Mango Haze Flower',
+          b: 'B. Dried Mango Haze Flower',
+          c: 'C. Mango Tree Sap'
+        },
+        answer: 'a',
+        bg: `url(${PurpleBg})`
+      },
+      {
+        question: 'By freezing fresh Mango Haze flower we retain the terpenes to extract the truest expression of the plant?',
+        options: {
+          a: 'A. True',
+          b: 'B. False',
+        },
+        answer: 'a',
+        bg: `url(${OrangeBg})`
+      },
+      {
+        question: "Color’s Mango Haze Live Resin has what cannabinoid ratio?",
+        options: {
+          a: 'A. 1:1 - CBD:THC',
+          b: 'B. 2:1 - CBD:THC',
+          c: 'C. 100% CBD',
+          d: 'D. 100% THC'
+        },
+        answer: 'd',
+        bg: `url(${PurpleBg})`
+      },
+      {
+        question: "What flavour palate explosion can you expect from Color Mango Haze Live Resin?",
+        options: {
+          a: "A. Cheesy + Peppery",
+          b: "B. Sweet + Spice",
+          c: "C. Floral + Citrus"
+        },
+        answer: 'b',
+        bg: `url(${OrangeBg})`
+      },
+      {
+        question: 'What go-to format is Color Mango Haze Live Resin available in?',
+        options: {
+          a: 'A. Milled Flower, Ready-to-Roll',
+          b: 'B. PAX Pod',
+          c: 'C. 510 Vape Cartridge'
+        },
+        answer: 'c',
+        bg: `url(${PurpleBg})`
+      }
+    ]
     const history = useHistory()
-    var set_forth_div = ['false']
-    
-
 
     useEffect(() => {
         randList()
     }, [])
 
-
-
-
-
-
-
-
     const randList = () => {
-        gsap.to('.green_bg', {backgroundColor: '#535938', duration: 0})
-        var newList = list_of_questions
 
-        if (completed.length >= questionaire_limit) {
-           
-            if(points < 4){ 
-                localStorage.setItem('points', points)
-                history.push('/points')
-                // window.location.reload()
-            }
-            else{ 
-                localStorage.setItem('points', points)
-                history.push('/data-capture')
-            }
-           
-        } else {
-            // Math.round(Math.random() * 4)
-            let random = counter++
-            const check_completed = completed.find(element => element == random)
-
-            // For some reason zero is being ignored. That why it's in the conditional statement below. 
-            if (check_completed || check_completed === 0) {
-                randList()
-            }
-            else {
-                completed.push(random)
-                question.current.textContent = list_of_questions[random]
-                console.log(completed)
-                switch (random) {
-                    case 0:
-                        bg.current.style.background = `url(${QuizOrangeBg})`
-                        bg.current.style.backgroundSize = 'cover'
-                        a.current.textContent = 'Is a Hybrid Offering'
-                        b.current.textContent = 'Is an Indica'
-                        c.current.textContent = 'Is a Sativa'
-                        d.current.textContent = 'All the above'
-                       
-                        break;
-                    case 1:
-                        bg.current.style.background = `url(${QuizGreenBg})`
-                        bg.current.style.backgroundSize = 'cover'
-                        a.current.textContent = 'Price Sensitive'
-                        b.current.textContent = 'High End'
-                        c.current.textContent = 'Mainstream'
-                        d.current.textContent = 'All the above'
-                       
-                        break;
-                    case 2:
-                        bg.current.style.background = `url(${QuizOrangeBg})`
-                        bg.current.style.backgroundSize = 'cover'
-                        a.current.textContent = 'The Brand'
-                        b.current.textContent = 'The Value'
-                        c.current.textContent = 'The Potency'
-                        d.current.textContent = 'The Flavour'
-                       
-                        break;
-                    case 3:
-                        bg.current.style.background = `url(${QuizGreenBg})`
-                        bg.current.style.backgroundSize = 'cover'
-                        a.current.textContent = "It's crafted with terpenes and other aromatic compounds native to both oranges and cannabis"
-                        b.current.textContent = "It's all limonene, which is the only citrus aromatic you need"
-                        c.current.textContent = "We hired the Keebler elves."
-                        d.current.textContent = 'All the above'
-                       
-                        break;
-                    case 4:
-                        bg.current.style.background = `url(${QuizOrangeBg})`
-                        bg.current.style.backgroundSize = 'cover'
-                        a.current.textContent = 'An experienced or occasional cannabis shopper who is seeking a smooth, high-THC joint-smoking experience and values the dollars in their pocket.'
-                        b.current.textContent = 'A shopper who is new to cannabis or is re-entering the category after many years, and is looking for a balanced offering.'
-                        c.current.textContent = 'An experienced or occasional smoker who is looking for a tasty, high-THC experience while they’re on-the-go that won’t break the bank'
-                        d.current.textContent = 'An occasional smoker who is looking for edibles.'
-                       
-                        break;
-                }
-            }
+      keyMap.forEach(key => {
+        // Set answer colors to orange or purple depending on odd or even question index
+        if (completed.length % 2 === 0) { // Orange
+          eval(`show${key.toUpperCase()}`).current.style = "background-color: #FF8C00"
+          orangeLogoRef.current.className = 'logo'
+          purpleLogoRef.current.className = 'logo displayNone'
+        } else { // Purple
+          eval(`show${key.toUpperCase()}`).current.style = "background-color: #6D0A45"
+          orangeLogoRef.current.className = 'logo displayNone'
+          purpleLogoRef.current.className = 'logo'
         }
+      })
+
+      if (completed.length >= questionaire_limit) {
+        if(points < 4){
+          localStorage.setItem('points', points)
+          history.push('/points')
+        }
+        else{
+          localStorage.setItem('points', points)
+          history.push('/data-capture')
+        }
+      } else {
+        let random = counter++
+        const check_completed = completed.find(element => element == random)
+
+        // For some reason zero is being ignored. That why it's in the conditional statement below.
+        if (check_completed || check_completed === 0) {
+          randList()
+        }
+        else {
+          completed.push(random)
+          question.current.textContent = list_of_questions[random].question
+          bg.current.style.background = list_of_questions[random].bg
+          bg.current.style.backgroundSize = '100% 100%'
+
+          keyMap.forEach(key => {
+            eval(key).current.className = `ans`
+            if (list_of_questions[random].options[key]) {
+              eval(key).current.textContent = list_of_questions[random].options[key]
+              eval(`show${key.toUpperCase()}`).current.className = `orange_bg ${key}`
+            } else {
+              eval(`show${key.toUpperCase()}`).current.className = 'displayNone'
+            }
+          })
+        }
+      }
     }
 
+    const selected_answer = (selected_data) => {
 
- 
+      let index = completed[completed.length -1]
 
-    const selectved_answer = (selected_data) => { 
-    
+      if(selected_data == list_of_questions[index].answer) {
+        gsap.to(`.${selected_data}`, {backgroundColor: '#FF8C00', duration: 0.5})
+        eval(selected_data).current.textContent = 'Correct.';
+        eval(selected_data).current.className = `ans correct`;
+        points++;
+      } else{
+        gsap.to(`.${selected_data}`, {backgroundColor: '#6D0A45', duration: 0.5})
+        eval(selected_data).current.textContent = 'Incorrect';
+      }
 
-        gsap.to(`.${selected_data}`, {backgroundColor: '#40473F', duration: 0.5})
-        switch(completed[completed.length -1]){
-            case 0: 
-            if(selected_data == 'c'){ c.current.textContent = 'Correct'; points++;  console.log(`updated points: ${points}`)}
-            else{  eval(selected_data).current.textContent = 'Incorrect'; }
-            break;
-
-            case 1:
-                if(selected_data == 'a'){ a.current.textContent = 'Correct'; points++;  console.log(`updated points: ${points}`)}
-                else{ eval(selected_data).current.textContent = 'Incorrect';}
-
-                break;
-            case 2:
-                if(selected_data == 'd'){ d.current.textContent = 'Correct'; points++;  console.log(`updated points: ${points}`)}
-                else{ eval(selected_data).current.textContent = 'Incorrect'}
-
-                break;
-            case 3:
-                if(selected_data == 'b'){ b.current.textContent = 'Correct'; points++;  console.log(`updated points: ${points}`)}
-                else{ eval(selected_data).current.textContent = 'Incorrect'}
-
-                break;
-            case 4:
-                if(selected_data == 'c'){ c.current.textContent = 'Correct'; points++;  console.log(`updated points: ${points}`)}
-                else{ eval(selected_data).current.textContent = 'Incorrect'}
-                break;
-        }
-
-
-    setTimeout(()=>{
+      setTimeout(()=>{
+        questionNumber.current.textContent = completed.length + 1
         randList()
-    }, 1000)
-        
- 
+      }, 1000)
     }
-    
 
     return (
-        <div className={'Prizing'} ref={bg}>
-            <div id='quiz_holder'>
-                <div id='title_holder'>
-                    <h3 ref={question}></h3>
-                </div>
-                <div id='answer_list'>
-                    <div className='green_bg a' onClick={() => selectved_answer('a')}><p className='ans' ref={a}></p></div>
-                    <div className='green_bg b' onClick={() => selectved_answer('b')}><p className='ans' ref={b}></p></div>
-                    <div className='green_bg c' onClick={() => selectved_answer('c')}><p className='ans' ref={c}></p></div>
-                    <div className={set_forth_div == 'true'?'displayNone':'green_bg d'} onClick={() => selectved_answer('d')}><p className='ans' ref={d}></p></div>
-                </div>
+      <div className="quiz-container" ref={bg}>
+        <div id='quizHolder'>
+            <div id='titleHolder'>
+              <div className="questionNumber" ref={questionNumber}>1</div>
+              <h1 ref={question}></h1>
             </div>
+            <div id='answer_list'>
+                <div ref={showA} className='displayNone' onClick={() => selected_answer('a')}><p className='ans' ref={a}></p></div>
+                <div ref={showB} className='displayNone' onClick={() => selected_answer('b')}><p className='ans' ref={b}></p></div>
+                <div ref={showC} className='displayNone' onClick={() => selected_answer('c')}><p className='ans' ref={c}></p></div>
+                <div ref={showD} className='displayNone' onClick={() => selected_answer('d')}><p className='ans' ref={d}></p></div>
+                <div ref={showE} className='displayNone' onClick={() => selected_answer('e')}><p className='ans' ref={e}></p></div>
+            </div>
+            <img ref={orangeLogoRef} className="colorLogo" src={OrangeLogo} alt="Color Cannabis Orange Logo" />
+            <img ref={purpleLogoRef} className="colorLogo displayNone" src={PurpleLogo} alt="Color Cannabis Orange Logo" />
         </div>
+        <p className="legal_copy">
+          All product images and labels provided for information and illustrative purposes
+          only, and do not represent the actual cannabis product, product label or it’s appearance.
+        </p>
+      </div>
     )
 
 }
