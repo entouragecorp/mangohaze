@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mango-haze/static/css/main.b26ed1df.chunk.css",
+    "main.css": "/mango-haze/static/css/main.346cef05.chunk.css",
     "main.js": "/mango-haze/static/js/main.493233c8.chunk.js",
     "main.js.map": "/mango-haze/static/js/main.493233c8.chunk.js.map",
     "runtime-main.js": "/mango-haze/static/js/runtime-main.acc68356.js",
@@ -10,7 +10,7 @@
     "static/js/3.4c93384f.chunk.js": "/mango-haze/static/js/3.4c93384f.chunk.js",
     "static/js/3.4c93384f.chunk.js.map": "/mango-haze/static/js/3.4c93384f.chunk.js.map",
     "index.html": "/mango-haze/index.html",
-    "static/css/main.b26ed1df.chunk.css.map": "/mango-haze/static/css/main.b26ed1df.chunk.css.map",
+    "static/css/main.346cef05.chunk.css.map": "/mango-haze/static/css/main.346cef05.chunk.css.map",
     "static/js/2.c81c9bc2.chunk.js.LICENSE.txt": "/mango-haze/static/js/2.c81c9bc2.chunk.js.LICENSE.txt",
     "static/media/Color.f02d29c1.mp4": "/mango-haze/static/media/Color.f02d29c1.mp4",
     "static/media/Pages.scss": "/mango-haze/static/media/purple-bg.a9df8fa2.png",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.acc68356.js",
     "static/js/2.c81c9bc2.chunk.js",
-    "static/css/main.b26ed1df.chunk.css",
+    "static/css/main.346cef05.chunk.css",
     "static/js/main.493233c8.chunk.js"
   ]
 }
