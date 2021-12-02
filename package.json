@@ -1,6 +1,6 @@
 {
-  "homepage": "https://entouragecorp.github.io/mango-haze/",
-  "name": "mango-haze",
+  "homepage": "https://entouragecorp.github.io/mangohaze/",
+  "name": "mangohaze",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
