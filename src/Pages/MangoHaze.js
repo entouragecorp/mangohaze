@@ -56,7 +56,7 @@ const SweetSour = (props) => {
 
         </div>
 
-        <div class="vape_container">
+        <div className="vape_container">
           <img id='vapePen' src={Cartridge} alt='' />
         </div>
 
@@ -66,7 +66,6 @@ const SweetSour = (props) => {
         </p>
 
       </div>
-
     </div>
    )
 
