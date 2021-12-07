@@ -36,12 +36,12 @@ const SweetSour = (props) => {
 
             <div className='info_container'>
               <p className='label'>SATIVA HYBRID</p>
-              <p className='margin_zero thin'>THC 18-24%</p>
-              <p className='margin_zero thin'>CBD 0-2%</p>
+              <p className='margin_zero thin'>THC 20-26% mg/g</p>
+              <p className='margin_zero thin'>CBD 43-49% mg/g</p>
             </div>
             <div className='info_container'>
               <p className='label'>AROMA & FLAVOURS</p>
-              <p className='margin_zero thin'>Citrus, Sour, Fuel</p>
+              <p className='margin_zero thin'>Tropical, Fruity, Mango</p>
             </div>
 
             <div className='info_container'>

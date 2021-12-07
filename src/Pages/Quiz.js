@@ -43,7 +43,7 @@ const Quiz = (props) => {
       {
         question: 'For ultimate freshness, our Live Resin Vapes are made from:',
         options: {
-          a: 'A. Flash frozen Mango Haze Flower',
+          a: 'A. Fresh frozen Mango Haze Flower',
           b: 'B. Dried Mango Haze Flower',
           c: 'C. Mango Tree Sap'
         },
@@ -67,7 +67,7 @@ const Quiz = (props) => {
           c: 'C. 100% CBD',
           d: 'D. 100% THC'
         },
-        answer: 'd',
+        answer: 'b',
         bg: `url(${PurpleBg})`
       },
       {
