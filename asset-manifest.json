@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/mangohaze/static/css/main.5f62cf12.chunk.css",
-    "main.js": "/mangohaze/static/js/main.73d720cb.chunk.js",
-    "main.js.map": "/mangohaze/static/js/main.73d720cb.chunk.js.map",
-    "runtime-main.js": "/mangohaze/static/js/runtime-main.f6972da8.js",
-    "runtime-main.js.map": "/mangohaze/static/js/runtime-main.f6972da8.js.map",
-    "static/js/2.c7d0724f.chunk.js": "/mangohaze/static/js/2.c7d0724f.chunk.js",
-    "static/js/2.c7d0724f.chunk.js.map": "/mangohaze/static/js/2.c7d0724f.chunk.js.map",
-    "static/js/3.d0ecfe59.chunk.js": "/mangohaze/static/js/3.d0ecfe59.chunk.js",
-    "static/js/3.d0ecfe59.chunk.js.map": "/mangohaze/static/js/3.d0ecfe59.chunk.js.map",
+    "main.css": "/mangohaze/static/css/main.41967682.chunk.css",
+    "main.js": "/mangohaze/static/js/main.1bcaf8e4.chunk.js",
+    "main.js.map": "/mangohaze/static/js/main.1bcaf8e4.chunk.js.map",
+    "runtime-main.js": "/mangohaze/static/js/runtime-main.c7252007.js",
+    "runtime-main.js.map": "/mangohaze/static/js/runtime-main.c7252007.js.map",
+    "static/js/2.978e927f.chunk.js": "/mangohaze/static/js/2.978e927f.chunk.js",
+    "static/js/2.978e927f.chunk.js.map": "/mangohaze/static/js/2.978e927f.chunk.js.map",
+    "static/js/3.d38a5543.chunk.js": "/mangohaze/static/js/3.d38a5543.chunk.js",
+    "static/js/3.d38a5543.chunk.js.map": "/mangohaze/static/js/3.d38a5543.chunk.js.map",
     "index.html": "/mangohaze/index.html",
-    "static/css/main.5f62cf12.chunk.css.map": "/mangohaze/static/css/main.5f62cf12.chunk.css.map",
-    "static/js/2.c7d0724f.chunk.js.LICENSE.txt": "/mangohaze/static/js/2.c7d0724f.chunk.js.LICENSE.txt",
+    "static/css/main.41967682.chunk.css.map": "/mangohaze/static/css/main.41967682.chunk.css.map",
+    "static/js/2.978e927f.chunk.js.LICENSE.txt": "/mangohaze/static/js/2.978e927f.chunk.js.LICENSE.txt",
     "static/media/Color.f02d29c1.mp4": "/mangohaze/static/media/Color.f02d29c1.mp4",
     "static/media/Pages.scss": "/mangohaze/static/media/purple-bg.a9df8fa2.png",
     "static/media/color-logo-orange.svg": "/mangohaze/static/media/color-logo-orange.a2759d5e.svg",
@@ -22,9 +22,9 @@
     "static/media/t-shirt-prize.63ed81c7.png": "/mangohaze/static/media/t-shirt-prize.63ed81c7.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f6972da8.js",
-    "static/js/2.c7d0724f.chunk.js",
-    "static/css/main.5f62cf12.chunk.css",
-    "static/js/main.73d720cb.chunk.js"
+    "static/js/runtime-main.c7252007.js",
+    "static/js/2.978e927f.chunk.js",
+    "static/css/main.41967682.chunk.css",
+    "static/js/main.1bcaf8e4.chunk.js"
   ]
 }
